@@ -1,0 +1,215 @@
+*{
+    font-weight: 300;  
+}
+
+:root{
+    --beje: #EBE3FF; /*var(--beje)*/
+}
+
+body{
+    margin: 0px;
+}
+
+.margin{
+    margin-left:26%;
+}
+
+main{
+    min-height: 100vh;
+}
+
+nav{
+    width: 25%;
+    position: fixed;
+    left:0px;
+    top:0px;
+    height: 100vh;
+    background-color:rgb(189, 188, 188);
+}
+
+.espaco{
+    margin: 16px;
+}
+h1{
+    font-weight: 800;
+    margin-bottom: 0px;
+    margin: auto; 
+    font-size: 36px;
+}
+
+.titulo{
+    margin-top: 0px;
+    font-size: 16px;
+    font-weight: 700;
+}
+#pesquisa{
+    width: 30%;
+    padding: 0.3em;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+#botao{
+    background: rgb(75, 202, 92);
+    border-radius: 10px;
+    padding: 0.3em;
+}
+
+label{
+
+}
+.fav{
+    font-weight: 400;
+    margin:5px 0px;
+    font-size: 24px
+}
+
+.cardFav p{
+    position: relative;
+    background: var(--beje);
+    border-radius: 15px; 
+    margin:auto;
+    width: 200px;
+    height: auto;
+    padding: 1.3em;
+    box-shadow: 3px 3px 10px;
+    margin: 8px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    
+}
+ 
+ul a{
+    text-decoration: none;
+    color:black;
+    margin: 10px;
+}
+
+.card{
+    display: inline-block;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center; 
+    width: 300px;
+    height: 350px;
+    margin:15px;
+    box-shadow: 20px 20px 60px ;
+    border-radius: 15px;
+    background: white;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    transform: translate(100px);
+    transition: 0.5s; 
+}
+
+.card-img-top{
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+     
+}
+
+.card-title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.card-body p{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*#h1{
+text-align: center;
+}
+
+ ul{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly; 
+     text-align: left;
+     background-color: white;
+     margin: 0px;
+     padding:1em;
+ }
+ 
+ul a{
+     color:black;
+     text-decoration: none;
+ }*/
+
+.section{ 
+    background: floralwhite;
+    border-radius: 5px; 
+    margin:auto;
+    width: 300px;
+    height: auto;
+    padding: 3em;
+    box-shadow: 3px 3px 10px;
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+footer p{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+/* nav do menu
+nav {
+    width: 80%;
+    height: 100vh;
+    padding: 1em 0;
+    font-size: 16px;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    left:-80%;
+    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.25);
+    transition: 1s;
+  }
+  
+  .nav{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .show-nav{
+    left: 0!important;
+    
+    }*/
