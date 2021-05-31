@@ -6,7 +6,6 @@ let urlId = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 let botao = document.getElementById('botao');
 let pesquisa = document.getElementById('pesquisa');
 let pratos = document.getElementById('pratos');
-
  aleatorio();
 
 function aleatorio(){
@@ -22,10 +21,11 @@ function aleatorio(){
 	                <img class="card-img-top" src="${dados.meals[0].strMealThumb}" alt="Card image cap">
 	                <div class="card-body">
 	                <h5 class="card-title">${dados.meals[0].strMeal}</h5>
-	                <p>${dados.meals[0].strArea}</p>
+					<p>${dados.meals[0].strArea}</p>
+			 
 	                </div> 
 	            	</a>
-	           		</div>`;
+					   </div>`;
             	pratos.innerHTML += card;
 		    });
 		});
@@ -35,12 +35,12 @@ function aleatorio(){
 
 botao.addEventListener("click", function(){
 let urlBuscar = urlPesquisa + pesquisa.value;
-	fetch(urlBuscar).then(function(resposta){
+fetch(urlBuscar).then(function(resposta){
 	    resposta.json().then(function(dados){
 	        console.log(dados);
 	        let tamanho = (dados.meals.length);
-
-        	pratos.innerHTML = '';
+			pratos.innerHTML = '';
+			 
         	for (let i = 0;i < tamanho; i++){
             	let card = `
 	            <div class="card">
@@ -48,17 +48,23 @@ let urlBuscar = urlPesquisa + pesquisa.value;
 	                <img class="card-img-top" src="${dados.meals[i].strMealThumb}" alt="Card image cap">
 	                <div class="card-body">
 	                <h5 class="card-title">${dados.meals[i].strMeal}</h5>
-	                <p>${dados.meals[i].strArea}</p>
+					<p>${dados.meals[i].strArea}</p>
+					<ion-icon id="favoritos" name="heart-outline"></ion-icon>
 	                </div> 
 	            </a>
 	            </div>`;
             	pratos.innerHTML += card;
             	pesquisa.value = "";
-        	}
-	    });
+			}
+		});
 	});
-
 });
+
+ /*
+card.addEventListener("click", function(){
+	informacoes.innerHTML = dados.meals[i].strIngredient[i];
+});*/
+
 
 function fetchChar(id) {
    let urlBuscar = urlId + id;

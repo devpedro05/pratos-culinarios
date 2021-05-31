@@ -25,13 +25,13 @@
             
           </div>
           <div class="cardFav">
-            <p class="cardFav">card3</p>
+            <p>card3</p>
           </div>
           <div>
             <ul>
-              <a href="">Sobre</a>
-              <a href="">Contato</a>
-              <a href="">Página da API</a>
+              <a href="sobre.html">Sobre</a>
+              <a href="contato.html">Contato</a>
+              <a href="https://www.themealdb.com/api.php">Página da API</a>
             </ul>            
            </div>
           </section>
@@ -44,13 +44,18 @@
       </div>
 
 
-      <label for="botao">Aqui você pode encontra diversos tipos de refeições, Procure pelo nome da refeição em inglês</label> <br>
+      <p class="subtitulo">Aqui você pode encontrar diversos tipos de refeições, ingredientes usados e modo de preparo.
+        Com um click no card da imagem você consegue todas essas informações,
+        devido a problemas no nosso servidor você só consegue buscar por refeições em inglês </p>
+        <p>Procure pelo nome da refeição em inglês</p>
       <input type="texto" name="texto" id="pesquisa" >
       <button id="botao" onclick="">Pesquisar</button>
 
       <section>
         <div id="pratos">
-          
+          <div class="show-div">
+             <p></p>
+          </div>
         </div>
       </section>
     </div>
@@ -64,3 +69,4 @@
  <script type="text/javascript" src="assets/js/main.js"></script> 
 </body>
 </html>
+<!--<ion-icon id="favoritos" name="heart-outline"></ion-icon>-->
