@@ -1,4 +1,4 @@
-# pratos-culinarios
+# Pratos-culinarios
 
 * O site tem a principal função de fazer buscas diretamente na API, mostrando varios 
   tipos de pratos relacionados a sua pesquisa.
