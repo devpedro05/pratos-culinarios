@@ -33,15 +33,20 @@ function aleatorio(){
 }
 
 
-botao.addEventListener("click", function(){
+botao.addEventListener("click", function p(){ 	
 let urlBuscar = urlPesquisa + pesquisa.value;
 fetch(urlBuscar).then(function(resposta){
 	    resposta.json().then(function(dados){
 	        console.log(dados);
-	        let tamanho = (dados.meals.length);
+	        let tamanho = (dados.meals );
 			pratos.innerHTML = '';
 			 
-        	for (let i = 0;i < tamanho; i++){
+			if(dados.meals === null){
+				alert("[ERRO 500] No momento não temos esse prato cadastrado")
+				pesquisa.value = "";
+			}
+			else{
+        	for (let i = 0;i < tamanho.length; i++){
             	let card = `
 	            <div class="card">
 	            <a id="${dados.meals[i].idMeal}">
@@ -55,12 +60,56 @@ fetch(urlBuscar).then(function(resposta){
 	            </div>`;
             	pratos.innerHTML += card;
             	pesquisa.value = "";
-			}
-		});
+		
+			}		
+		}
 	});
+		
+  });
 });
 
- /*
+pesquisa.addEventListener('keydown', function(event) { // também pode usar keyup
+    if(event.keyCode === 13) {
+		let urlBuscar = urlPesquisa + pesquisa.value;
+		fetch(urlBuscar).then(function(resposta){
+				resposta.json().then(function(dados){
+					console.log(dados);
+					let tamanho = (dados.meals );
+					pratos.innerHTML = '';
+					 
+					if(dados.meals === null){
+						alert("[ERRO 500] No momento não temos esse prato cadastrado")
+						pesquisa.value = "";
+					}
+					else{
+					for (let i = 0;i < tamanho.length; i++){
+						let card = `
+						<div class="card">
+						<a id="${dados.meals[i].idMeal}">
+							<img class="card-img-top" src="${dados.meals[i].strMealThumb}" alt="Card image cap">
+							<div class="card-body">
+							<h5 class="card-title">${dados.meals[i].strMeal}</h5>
+							<p>${dados.meals[i].strArea}</p>
+							<ion-icon id="favoritos" name="heart-outline"></ion-icon>
+							</div> 
+						</a>
+						</div>`;
+						pratos.innerHTML += card;
+						pesquisa.value = "";
+				
+					}		
+				}
+			});
+				
+		  });
+		 
+    }
+});  
+ 
+
+
+/*
+
 card.addEventListener("click", function(){
 	informacoes.innerHTML = dados.meals[i].strIngredient[i];
 });*/
@@ -77,3 +126,4 @@ function fetchChar(id) {
         console.log(dados)
     });
 };
+ 
