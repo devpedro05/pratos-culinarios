@@ -1,19 +1,22 @@
-let urlPesquisa = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
-let urlAleatoria = 'https://www.themealdb.com/api/json/v1/1/random.php';
+let urlPesquisa = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';let urlAleatoria = 'https://www.themealdb.com/api/json/v1/1/random.php';
 let urlClasses = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 let urlId = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 let botao = document.getElementById('botao');
 let pesquisa = document.getElementById('pesquisa');
 let pratos = document.getElementById('pratos');
- aleatorio();
-
+let Recentes = document.querySelector('Recentes'); 
+let hamburger = document.querySelector('.hamburger ion-icon');
+let nav = document.querySelector('.top-container nav');
+let nav2 = document.querySelector('.top-container .nav2');
+aleatorio();
+ 
 function aleatorio(){
 	for(let i = 0; i < 6; i++){
 		fetch(urlAleatoria).then(function(resposta){
 		    resposta.json().then(function(dados){
 		        console.log(dados);
-
+          
 
 	        	let card = `
 		            <div class="card">
@@ -32,6 +35,7 @@ function aleatorio(){
 	}	
 }
 
+/*<ion-icon name="bookmark-outline"></ion-icon>*/ //icone de favoritos
 
 botao.addEventListener("click", function p(){ 	
 let urlBuscar = urlPesquisa + pesquisa.value;
@@ -42,7 +46,7 @@ fetch(urlBuscar).then(function(resposta){
 			pratos.innerHTML = '';
 			 
 			if(dados.meals === null){
-				alert("[ERRO 500] No momento não temos esse prato cadastrado")
+				alert("[ERRO 520] No momento não temos esse prato cadastrado")
 				pesquisa.value = "";
 			}
 			else{
@@ -54,7 +58,6 @@ fetch(urlBuscar).then(function(resposta){
 	                <div class="card-body">
 	                <h5 class="card-title">${dados.meals[i].strMeal}</h5>
 					<p>${dados.meals[i].strArea}</p>
-					<ion-icon id="favoritos" name="heart-outline"></ion-icon>
 	                </div> 
 	            </a>
 	            </div>`;
@@ -78,7 +81,7 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
 					pratos.innerHTML = '';
 					 
 					if(dados.meals === null){
-						alert("[ERRO 500] No momento não temos esse prato cadastrado")
+						alert("[ERRO 520] No momento não temos esse prato cadastrado")
 						pesquisa.value = "";
 					}
 					else{
@@ -90,7 +93,6 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
 							<div class="card-body">
 							<h5 class="card-title">${dados.meals[i].strMeal}</h5>
 							<p>${dados.meals[i].strArea}</p>
-							<ion-icon id="favoritos" name="heart-outline"></ion-icon>
 							</div> 
 						</a>
 						</div>`;
@@ -108,12 +110,12 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
  
 
 
-/*
 
-card.addEventListener("click", function(){
-	informacoes.innerHTML = dados.meals[i].strIngredient[i];
-});*/
+pratos.addEventListener('click', function(){
+	pratos.classList.toggle('show-div')
+	alert('O card foi clicado!')
 
+});
 
 function fetchChar(id) {
    let urlBuscar = urlId + id;
@@ -127,3 +129,8 @@ function fetchChar(id) {
     });
 };
  
+
+hamburger.addEventListener('click', function() {
+	nav.classList.toggle('show-nav');
+/*	nav2.classList.toggle('show-nav');*/
+  })
