@@ -22,13 +22,13 @@ nav{
     width: 40%;
     height: 100vh;
     position: fixed;
-    left:0px;
+    left:-100%;
     top:0px;
     background-color:rgb(189, 188, 188);
 }
 
 .show-nav{
-    left:-50%!important;
+    left:0!important;
 
 }
 
