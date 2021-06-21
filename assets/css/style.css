@@ -9,9 +9,11 @@
 body{
     margin: 0px;  
     background: #d9c8aa;
-    padding: 15px;
 }
 
+.padd{
+    padding: 15px;
+}
 
 
 main{
@@ -25,6 +27,7 @@ nav{
     left:-100%;
     top:0px;
     background-color:rgb(189, 188, 188);
+    z-index: 100;
 }
 
 .show-nav{
@@ -38,7 +41,9 @@ h1{
     margin: auto; 
     font-size: 36px;
 }
-
+.h1{
+    margin: 5px
+}
 .hamburger ion-icon {
     font-size: 32px;
     position: fixed; 
@@ -50,13 +55,14 @@ h1{
     transition: 1s left ease;
   }
 
+
 .titulo{
     margin-top: 0px;
     font-size: 16px;
     font-weight: 700;
 }
 #pesquisa{
-    width: 30%;
+    width: 50%;
     padding: 0.3em;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -77,7 +83,7 @@ h1{
 }
 .fav{
     font-weight: 400;
-    margin:5px 0px;
+    margin:5px;
     font-size: 24px
 }
 
@@ -120,20 +126,19 @@ ul a{
     height: 300px; 
     margin-bottom:15px;
     background: white;
-   /* box-shadow: 15px 15px 40px ;*/
+  /*  box-shadow: 15px 15px 40px ;*/
     border-radius: 15px;
     border-top: 1px solid;
     border-left: 1px solid;
     transform: translate(100px);
     transition: 0.5s; 
-    z-index: 1;
+    z-index: 100;
 } 
 
 .card-img-top{/*localizado no JS*/
     border-radius: 15px;
     width: 200px;
-    height: 200px;
-    margin-top: 8px; 
+    height: 200px;  
     transition: transform 1s;
 }
 
@@ -149,50 +154,58 @@ ul a{
 
 .card-body p{/*localizado no JS*/
     text-align: center;
+    margin: 10px;
 }
 
-/*.divResultado{/*Criando uma div que vai mostrar as informações 
-    width: 60px;
-    height: 60px;
+/*#ingredientes{ 
+    width: 250px;
+    height: 200px;
+    left: 20%;
     background-color: white;
     position: fixed;
     display: flex;
     justify-content: center;
-    box-shadow: #d9c8aa;  
-    bottom: -80%;  
-}*/
+    align-items: center;
+    box-shadow: #ffffff;  
+       
+} 
  
-/*.show-div{
+ .show-div{
     bottom: 0!important;
-}*/
+} */
  
-.nav2{
+/*.nav2{
     width: 30%;
     position: fixed;
     left:0px;
     top:0px;
     height: 100vh;
     background-color:rgb(189, 188, 188);
-}
-
+}*/
+ 
+ 
 .espaco2{
     margin: 16px;
 } 
-
-.margin2{
-    margin-left:31%;
-}
+ 
 
 .menu-social{
     display: flex;
-    flex-direction: column;
-   align-items: left;
+    flex-direction: row; 
     list-style: none;
+}
+span{
+    font-weight: 800;
 }
 
 .menu-item{
-    margin: 16px;
+    margin: 0px;
     text-align:left;
+    background: var(--beje);
+    border-radius: 50px; 
+    margin:auto;
+    width: auto;
+    height: auto;  
 
 }
 
@@ -202,6 +215,11 @@ ul a{
     border-radius: 20px;
 }
 
+ .Rdsociais{
+     background: none;
+     box-shadow: none;
+     margin: 0;
+ }
  
 footer p{
     width: 100%;
@@ -245,19 +263,25 @@ nav{
 } 
 
 .margin2{
-    margin-left:31%;
+    margin-left:25%;
 }
 
-.margin{
-    margin-left:26%;
+#pesquisa{
+    width: 30%;
+    padding: 0.3em;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+ .margin{
+    margin-left:26%; 
 }
 .card{ /*localizado no JS*/
     display: flex;
     align-items: center; 
     justify-items: left;
     width: 250px;
-    height: 350px;
-    margin:15px;
+    height: auto;
+    margin:20px;
     box-shadow: 20px 20px 60px ;
     border-radius: 15px;
     background: white;
@@ -271,12 +295,14 @@ nav{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
+    justify-content: center;
 }
 
    .card-img-top{/*localizado no JS*/
     border-radius: 15px;
     width: 250px;
-    height: 200px;  
+    height: 200px; 
+    margin-top: 0px;  
     transition: transform 1s;
 }
 
@@ -293,14 +319,8 @@ nav{
     background-color:rgb(189, 188, 188);
 }
 
-.espaco2{
-    margin: 16px;
-} 
-
-.margin2{
-    margin-left:31%;
-}
-
+ 
+ 
 
 
 

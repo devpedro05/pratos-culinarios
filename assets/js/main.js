@@ -8,7 +8,11 @@ let pratos = document.getElementById('pratos');
 let Recentes = document.querySelector('Recentes'); 
 let hamburger = document.querySelector('.hamburger ion-icon');
 let nav = document.querySelector('.top-container nav');
-let nav2 = document.querySelector('.top-container .nav2');
+ 
+
+hamburger.addEventListener('click', function() { 
+	nav.classList.toggle('show-nav');
+  })
 aleatorio();
  
 function aleatorio(){
@@ -42,7 +46,7 @@ let urlBuscar = urlPesquisa + pesquisa.value;
 fetch(urlBuscar).then(function(resposta){
 	    resposta.json().then(function(dados){
 	        console.log(dados);
-	        let tamanho = (dados.meals );
+	        let tamanho = (dados.meals);
 			pratos.innerHTML = '';
 			 
 			if(dados.meals === null){
@@ -112,10 +116,23 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
 
 
 pratos.addEventListener('click', function(){
-	pratos.classList.toggle('show-div')
-	alert('O card foi clicado!')
+	ingredientes.classList.toggle('show-div')
+	let Subcard = `
+			<div class="Subcard">
+				<a id="${dados.meals[i].idMeal}">
+				 <p>Ingredientes: ${strIngredient[i]}</p>
+				<div class="card-body">
+				<h5 class="card-title"> Modo de preparo: ${strInstructions}</h5>
+					<a>${strYoutube}</a>
+					<p>Link do site de preparo</p>
+					<a>${strSource}</a>
+			</div> 
+			</a>
+			</div>`;
+			ingredientes.innerHTML += card;
 
 });
+
 
 function fetchChar(id) {
    let urlBuscar = urlId + id;
@@ -130,7 +147,6 @@ function fetchChar(id) {
 };
  
 
-hamburger.addEventListener('click', function() {
-	nav.classList.toggle('show-nav');
-/*	nav2.classList.toggle('show-nav');*/
-  })
+
+ 
+ 
