@@ -8,12 +8,14 @@ let pratos = document.getElementById('pratos');
 let Recentes = document.querySelector('Recentes'); 
 let hamburger = document.querySelector('.hamburger ion-icon');
 let nav = document.querySelector('.top-container nav');
- 
+
 
 hamburger.addEventListener('click', function() { 
 	nav.classList.toggle('show-nav');
   })
-aleatorio();
+
+
+ aleatorio();
  
 function aleatorio(){
 	for(let i = 0; i < 6; i++){
@@ -115,23 +117,22 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
 
 
 
-pratos.addEventListener('click', function(){
-	ingredientes.classList.toggle('show-div')
+/*pratos.addEventListener('click', function(){
+/*	ingredientes.classList.toggle('show-div')
 	let Subcard = `
-			<div class="Subcard">
-				<a id="${dados.meals[i].idMeal}">
-				 <p>Ingredientes: ${strIngredient[i]}</p>
-				<div class="card-body">
-				<h5 class="card-title"> Modo de preparo: ${strInstructions}</h5>
-					<a>${strYoutube}</a>
-					<p>Link do site de preparo</p>
-					<a>${strSource}</a>
-			</div> 
-			</a>
-			</div>`;
-			ingredientes.innerHTML += card;
+	<div class="Subcard">
+		<li class="list-group-item">site:<p id="strYoutube" class="d-flex justify-content-end"></p></li>
+				  
+		</div>
+			<button class="cookie">Fechar</button>
+		</div>
+		</div> 
+		</a>
+		</div>`;
+	Subcard.innerHTML += Subcard;
 
-});
+
+});*/
 
 
 function fetchChar(id) {
@@ -142,11 +143,55 @@ function fetchChar(id) {
         return resposta.json();
     })
     .then(function(dados){
-        console.log(dados)
+		console.log(dados)
+		
+	let Informaçoes = `
+	<div class="menufechar">
+	<p href="javascript: fechar();"> <ion-icon name="arrow-undo-outline"></ion-icon> </p>
+	</div>
+	<div class="subcard">
+		<a class= "a"  > 
+		<div class="card-body">
+		 
+		<p>Ingredietes:</p>
+		<p class="card-title">${dados.meals[0].strIngredient }</p>
+		<p>Site com o modo de preparo do prato:</p>
+		<p>${dados.meals[0].strSource}</p>
+	
+		<p>Video sobre o modo de preparo:</p>
+		<p>${dados.meals[0].strYoutube}</p>
+		</div> 
+		</a>
+		 
+	</div>`;
+	    Subcard.innerHTML += Informaçoes;
+
     });
 };
+
+
+
+ 
  
 
 
- 
- 
+
+/*let Informaçoes = `
+	<div class="subcard">
+		<a class= "a" id="${dados.meals[0].idMeal} > 
+		<div class="card-body">
+		 
+		<p>Ingredietes:</p>
+		<h5 class="card-title">${dados.meals[0].strIngredient }</h5>
+		<p>Modo de Preparo:</p>
+		<p>${dados.meals[0].strInstructions}</p>
+	
+		<p>Video sobre o modo de preparo:</p>
+		<p>${dados.meals[0].strYoutube}</p>
+		</div> 
+		</a>
+		<div>
+		<button class="cookie">Fechar</button>
+		</div>
+	</div>`;
+	    Subcard.innerHTML += Informaçoes;*/
