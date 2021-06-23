@@ -1,4 +1,4 @@
 function fechar(){
-    document.querySelector('.fechar').style.display = 'none';
+    document.querySelector('#Subcard').style.display = 'none';
     
 }

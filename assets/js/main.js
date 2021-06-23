@@ -8,6 +8,7 @@ let pratos = document.getElementById('pratos');
 let Recentes = document.querySelector('Recentes'); 
 let hamburger = document.querySelector('.hamburger ion-icon');
 let nav = document.querySelector('.top-container nav');
+let Modal = document.querySelector('.modal');
 
 
 hamburger.addEventListener('click', function() { 
@@ -108,7 +109,6 @@ pesquisa.addEventListener('keydown', function(event) { // também pode usar keyu
 					}		
 				}
 			});
-				
 		  });
 		 
     }
@@ -147,14 +147,14 @@ function fetchChar(id) {
 		
 	let Informaçoes = `
 	<div class="menufechar">
-	<p href="javascript: fechar();"> <ion-icon name="arrow-undo-outline"></ion-icon> </p>
+	<button onclick="fechar()"> <ion-icon name="arrow-undo-outline"></ion-icon> </button>
 	</div>
 	<div class="subcard">
-		<a class= "a"  > 
+		<a class= "a" } > 
 		<div class="card-body">
 		 
 		<p>Ingredietes:</p>
-		<p class="card-title">${dados.meals[0].strIngredient }</p>
+		<p class="card-title">${dados.meals[0].strIngredient}</p>
 		<p>Site com o modo de preparo do prato:</p>
 		<p>${dados.meals[0].strSource}</p>
 	
@@ -164,13 +164,17 @@ function fetchChar(id) {
 		</a>
 		 
 	</div>`;
-	    Subcard.innerHTML += Informaçoes;
+		Subcard.innerHTML = " ";
+	    Subcard.innerHTML = Informaçoes;
 
+	    abrirModal();
     });
 };
 
 
-
+function abrirModal(){
+	Modal.classList.toggle('MostrarModal');
+}
  
  
 

@@ -19,6 +19,12 @@ body{
 main{
     min-height: 100vh;
 }
+.modal{
+    display: none;
+}
+.abrirModal{
+    display: flex !important;
+}
 
 nav{
     width: 40%;
@@ -170,7 +176,6 @@ ul a{
     z-index: 10000;
     border-radius: 5px;
     overflow: scroll; 
-    visibility:  auto;
 } 
  
 .menufechar ion-icon{
